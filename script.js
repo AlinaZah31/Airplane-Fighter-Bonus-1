@@ -5,8 +5,6 @@ const randomNoOfObjects = Math.floor(Math.random() * boardLen + 1);
 let realNoObjects = 0;
 let colObject = [], lineObj = 0;
 
-addStrangeObjects();
-
 function addStrangeObjects() {
     for (let i = 1; i <= randomNoOfObjects; ++i) {
         colObject[i] = Math.floor(Math.random() * boardLen);
@@ -15,7 +13,7 @@ function addStrangeObjects() {
     console.log("randomNoOfObjects: " + randomNoOfObjects);
 }
 
-generateButtons();
+addStrangeObjects();
 
 function generateButtons() {
     for (let i = 0; i < boardLen; ++i) {
@@ -42,6 +40,8 @@ function generateButtons() {
         }  
     } 
 }
+
+generateButtons();
 
 function startStopWatch() {
     document.getElementById('Score-text').innerHTML = '0';
@@ -83,8 +83,6 @@ function moveObjectDown() {
     }   
 }
 
-airplaneMovesLeftRight();
-
 function airplaneMovesLeftRight() {
     const input = document.querySelector("input");
     const log = document.getElementById("log");
@@ -106,3 +104,5 @@ function airplaneMovesLeftRight() {
         prevAirplane.style.backgroundColor = "gray";
     }
 }
+
+airplaneMovesLeftRight();
